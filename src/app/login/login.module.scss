@@ -1,0 +1,210 @@
+@use "../../styles/_variables" as *; // adjust relative path
+
+.header {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%; // stretch across page
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0); // fully transparent
+
+  .headerIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+
+}
+
+.loginContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.banner {
+  flex: 1;
+  background-image: url("/images/login_banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; // left-align content
+  padding: 2rem;
+
+  .bannerHeader {
+    display: flex;
+    flex-direction: row; // force icon + text inline
+    align-items: center; // vertically center
+    gap: 10px;
+  }
+
+  h1 {
+    color: $primary-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .bannerIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.form {
+  flex: 1;
+  background: $background-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5rem;
+  gap: 1.5rem; // Add this to create uniform space between all direct children
+
+  .message {
+    gap: 1rem; // Add this to create uniform space between all direct children
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      font-size: 2rem;
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-message;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .errorMessage {
+    color: #ff4d4f; // red, or any color you prefer
+    font-size: 0.875rem; // smaller than normal text
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%; // full width
+    gap: 0.25rem; // small gap between input and error
+    margin-bottom: 0.5rem; // optional spacing between groups
+  }
+
+  input {
+    padding: 0.75rem;
+    border: 2px solid $form-border;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: $text-message;
+    letter-spacing: 0.05em;
+
+    &:focus {
+      border-color: $form-border-focus;
+      outline: none;
+    }
+  }
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    input {
+      flex-grow: 1;
+      padding: 0.75rem 3.5rem 0.75rem 1rem;
+      border: 2px solid $form-border;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: $text-message;
+      letter-spacing: 0.05em;
+
+      &:focus {
+        border-color: $form-border-focus;
+        outline: none;
+      }
+    }
+
+    .toggleIcon {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: $auth-link;
+      cursor: pointer;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  a {
+    color: $auth-link;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      color: $auth-link-hover;
+    }
+
+    &:focus {
+      color: $auth-link-focus;
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 0.75rem;
+    background: $secondary-color;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $secondary-color-hover;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: $background-dark;
+    color: $text-message-dark;
+
+  }
+}
