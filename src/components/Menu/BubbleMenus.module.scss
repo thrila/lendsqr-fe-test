@@ -1,0 +1,39 @@
+@use "../../styles/_variables" as *; // adjust relative path
+
+.bubbleMenu {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 140px;
+  z-index: 1000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
+    transform: rotate(45deg);
+  }
+
+  li {
+    padding: 0.6rem 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: rgba(84, 95, 125, 1);
+    font-size: 14px;
+
+    &:hover {
+      background: #f9fafb;
+    }
+  }
+}
