@@ -1,0 +1,5 @@
+- make the cards, header sidebar
+- make it responsive
+- make the it have darkmode
+- make it have a loading state
+- make the relavant popups and populate them
