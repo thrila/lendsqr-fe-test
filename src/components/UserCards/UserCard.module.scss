@@ -1,0 +1,47 @@
+@use "../../styles/variables" as *; // adjust relative path
+$icon-wrapper : rgba(33, 63, 125, 0.06);
+
+.card {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: $background-light;
+  box-shadow: 2px 2px 6px rgba(0.08, 0.08, 0.08, 0.08);
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; // fully rounded
+  background: $icon-wrapper; // soft blue shade
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; // space between title and text
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 200;
+  color: #6b7280;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  color: $primary-color;
+  margin: 0;
+}
