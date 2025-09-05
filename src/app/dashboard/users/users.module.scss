@@ -1,0 +1,24 @@
+@use "../../../styles/_variables" as *; // adjust relative path
+
+
+.cardsRow {
+  display: flex;
+  gap: 1.2rem; // space between cards
+  margin-top: 1rem; // optional spacing
+}
+
+.header {
+  font-size: 24px;
+  color: $primary-color;
+  font-weight: 600;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; // spacing between sections
+  padding: 1.5rem;
+  background: #f9fafb;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
