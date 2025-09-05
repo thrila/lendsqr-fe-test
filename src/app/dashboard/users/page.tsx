@@ -4,6 +4,7 @@ import UserTable from "@/components/Table/Table";
 import styles from "./users.module.scss";
 import { userCardList } from "./UsersList";
 import { mockUsers } from "@/components/Table/TableList";
+import PaginationBar from "@/components/Pagination";
 
 const UserPage = () => {
   return (
@@ -18,6 +19,9 @@ const UserPage = () => {
       </div>
       <div>
         <UserTable users={mockUsers} loading={false} />
+      </div>
+      <div>
+        <PaginationBar totalItems={2000} />
       </div>
     </div>
   );

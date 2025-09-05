@@ -1,6 +1,6 @@
-import { UserTableProps, User } from "@/type/types";
+import { User } from "@/type/types";
 
-export const mockUsers: UserTableProps = [
+export const mockUsers: Array<User> = [
   {
     organization: "Acme Corp",
     username: "alice",

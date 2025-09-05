@@ -1,0 +1,67 @@
+.paginationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  color: #545f7d;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 4px 8px;
+
+  select {
+    padding: 0.2rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(33, 63, 125, 0.1);
+    color: #1d1d1d;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .navBtn {
+    border: none;
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    color: #545f7d;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .pageNum {
+    color: #545f7d;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(84, 95, 125, 0.1);
+    }
+  }
+
+  .active {
+    font-weight: bold;
+    color: #213f9a; // highlighted page number
+  }
+
+  .ellipsis {
+    color: #545f7d;
+    padding: 0 0.3rem;
+  }
+}

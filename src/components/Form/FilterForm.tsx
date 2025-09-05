@@ -71,10 +71,10 @@ export default function UserForm({ onSubmit, onCancel }: UserFormProps) {
       {/* Actions */}
       <div className={styles.actions}>
         <button type="button" onClick={onCancel} className={styles.cancel}>
-          Cancel
+          Reset
         </button>
-        <button type="submit" className={styles.save}>
-          Save
+        <button type="submit" onClick={onCancel} className={styles.save}>
+          Filter
         </button>
       </div>
     </form>
