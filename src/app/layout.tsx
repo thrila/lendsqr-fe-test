@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LendSqr •",
+  title: "LendSqr",
   description:
     "Lendsqr is a platform that helps lenders launch, scale and manage their loan businesses across multiple channels and markets. It offers features such as origination, decisioning, approval, disbursement, collections, and lending APIs at a fraction of the cost and time",
 };
@@ -25,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+        <div id="portal-root"></div> {/* portal target */}
+        <div id="form-root"></div>{" "}
+      </body>
     </html>
   );
 }
