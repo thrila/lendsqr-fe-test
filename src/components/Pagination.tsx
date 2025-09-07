@@ -6,14 +6,14 @@ import ChervonLeft from "@/icons/chervon_left.svg";
 
 type Props = {
   totalItems: number;
-  initialPerPage?: number;
+  itemsPerPage: number;
+  onPageChange: (page: number) => void;
+  onItemsPerPageChange: (itemsPerPage: number) => void;
+  currentPage: number;
 };
 
-export default function PaginationBar({ totalItems, initialPerPage = 100 }: Props) {
-  const [perPage, setPerPage] = useState(initialPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(totalItems / perPage);
+export default function PaginationBar({ totalItems, itemsPerPage, onPageChange, onItemsPerPageChange, currentPage }: Props) {
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   // Build list of pages to display with ellipsis
   const getPageNumbers = () => {
@@ -41,10 +41,10 @@ export default function PaginationBar({ totalItems, initialPerPage = 100 }: Prop
       <div className={styles.info}>
         Showing
         <select
-          value={perPage}
+          value={itemsPerPage}
           onChange={(e) => {
-            setPerPage(Number(e.target.value));
-            setCurrentPage(1);
+            onItemsPerPageChange(Number(e.target.value));
+            onPageChange(1);
           }}
         >
           <option value={10}>10</option>
@@ -58,7 +58,7 @@ export default function PaginationBar({ totalItems, initialPerPage = 100 }: Prop
       <div className={styles.controls}>
         <button
           className={styles.navBtn}
-          onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+          onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           <ChervonLeft />
@@ -73,7 +73,7 @@ export default function PaginationBar({ totalItems, initialPerPage = 100 }: Prop
             <span
               key={idx}
               className={`${styles.pageNum} ${p === currentPage ? styles.active : ""}`}
-              onClick={() => setCurrentPage(p as number)}
+              onClick={() => onPageChange(p as number)}
             >
               {p}
             </span>
@@ -82,7 +82,7 @@ export default function PaginationBar({ totalItems, initialPerPage = 100 }: Prop
 
         <button
           className={styles.navBtn}
-          onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+          onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           <ChervonRight />
