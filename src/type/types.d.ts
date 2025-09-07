@@ -14,11 +14,11 @@ export type UserCardProps = {
 export type BubbleList = Array<Omit<UserCardProps, "title"> & { href: string }>;
 
 export type User = {
-  id:string;
+  id: string;
   organization: string;
   username: string;
   email: string;
-  phone: string;
+  phone: number;
   dateJoined: string; // ISO string or formatted date
   status: "active" | "inactive" | "pending" | "blacklisted";
 };

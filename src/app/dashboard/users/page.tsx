@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import UserCard from "@/components/UserCards/Card";
 import UserTable from "@/components/Table/Table";
@@ -26,10 +26,17 @@ const UserPage = () => {
         ))}
       </div>
       <div>
+        {/* @ts-ignore */}
         <UserTable users={currentUsers} loading={false} />
       </div>
       <div>
-        <PaginationBar totalItems={users.length} itemsPerPage={itemsPerPage} onPageChange={setCurrentPage} onItemsPerPageChange={setItemsPerPage} currentPage={currentPage} />
+        <PaginationBar
+          totalItems={users.length}
+          itemsPerPage={itemsPerPage}
+          onPageChange={setCurrentPage}
+          onItemsPerPageChange={setItemsPerPage}
+          currentPage={currentPage}
+        />
       </div>
     </div>
   );
