@@ -1,0 +1,51 @@
+[
+  "{{repeat(2000)}}",
+  {
+    id: "{{index(1)}}",
+
+    // Top card
+    organization: "{{random('Lendsqr', 'Paystack', 'Flutterwave', 'Kuda', 'Opay')}}",
+    username: "{{firstName().toLowerCase()}}{{integer(10,999)}}",
+    name: "{{firstName()}} {{surname()}}",
+    email: "{{firstName().toLowerCase()}}.{{surname().toLowerCase()}}@example.com",
+    phone: "+234{{integer(7010000000, 9099999999)}}",
+    bank: "{{random('GTBank', 'Access Bank', 'First Bank', 'Providus Bank', 'UBA')}}",
+    amount: "₦{{integer(50000, 5000000)}}.00",
+    tier: "{{random('★☆☆', '★★☆', '★★★')}}",
+
+    dateJoined: "{{date(new Date(2020, 0, 1), new Date(), 'MMM DD, YYYY hh:mm A')}}",
+    status: "{{random('active', 'inactive', 'pending', 'blacklisted')}}",
+
+    // Personal Information
+    bvn: "{{integer(20000000000, 29999999999)}}",
+    gender: "{{random('Male', 'Female')}}",
+    maritalStatus: "{{random('Single', 'Married', 'Divorced', 'Widowed')}}",
+    children: "{{integer(0, 5)}}",
+    typeOfResidence: "{{random('Parent’s Apartment', 'Rented Apartment', 'Self-Owned Apartment')}}",
+
+    // Education and Employment
+    levelOfEducation: "{{random('Secondary', 'Diploma', 'B.Sc', 'Masters', 'PhD')}}",
+    employmentStatus: "{{random('Employed', 'Unemployed', 'Self-Employed')}}",
+    sectorOfEmployment: "{{random('FinTech', 'Finance', 'Technology', 'Health', 'Education', 'Government', 'Oil & Gas', 'Agriculture', 'Other')}}",
+    durationOfEmployment: "{{integer(1, 30)}} years",
+    officialMail: "{{firstName().toLowerCase()}}.{{surname().toLowerCase()}}@company.com",
+    monthlyIncome: [
+      "₦{{integer(30000, 200000)}}",
+      "₦{{integer(200001, 2000000)}}"
+    ],
+    loanRepayment: "₦{{integer(10000, 500000)}}",
+
+    // Socials
+    facebook: "https://facebook.com/{{firstName().toLowerCase()}}{{integer(100,999)}}",
+    instagram: "https://instagram.com/{{firstName().toLowerCase()}}{{integer(100,999)}}",
+    twitter: "https://twitter.com/{{firstName().toLowerCase()}}{{integer(100,999)}}",
+
+    // Guarantor
+    guarantor: {
+      fullName: "{{firstName()}} {{surname()}}",
+      number: "+234{{integer(7010000000, 9099999999)}}",
+      email: "{{firstName().toLowerCase()}}.{{surname().toLowerCase()}}@mail.com",
+      relationship: "{{random('Brother', 'Sister', 'Friend', 'Colleague', 'Parent')}}"
+    }
+  }
+]
