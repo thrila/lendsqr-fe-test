@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import UserCard from "@/components/UserCards/Card";
 import UserTable from "@/components/Table/Table";
 import styles from "./users.module.scss";
@@ -7,6 +8,13 @@ import users from "@/data/users.json";
 import PaginationBar from "@/components/Pagination";
 
 const UserPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentUsers = users.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <div className={styles.pageContainer}>
       <div>
@@ -18,10 +26,10 @@ const UserPage = () => {
         ))}
       </div>
       <div>
-        <UserTable users={users.slice(0, 99)} loading={false} />
+        <UserTable users={currentUsers} loading={false} />
       </div>
       <div>
-        <PaginationBar totalItems={users.length} />
+        <PaginationBar totalItems={users.length} itemsPerPage={itemsPerPage} onPageChange={setCurrentPage} onItemsPerPageChange={setItemsPerPage} currentPage={currentPage} />
       </div>
     </div>
   );
