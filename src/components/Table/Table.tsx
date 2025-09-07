@@ -17,7 +17,7 @@ export default function UserTable({ users, loading = false }: Props) {
   const [openRow, setOpenRow] = useState<number | null>(null);
   const [open, setOpen] = useState(false);
   const [coords, setCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
-  const [formCoords, setFormCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+  const [formCoords] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
   const [menuVisible, setMenuVisible] = useState(false);
   const skeletonRows = Array.from({ length: 5 });
 
@@ -36,9 +36,9 @@ export default function UserTable({ users, loading = false }: Props) {
     setOpenRow(idx);
     setMenuVisible(true); // <-- make menu visible
   };
-  const handleFormClick = (e: React.MouseEvent) => {
-    setFormCoords({ top: e.clientY, left: e.clientX });
-  };
+  // const handleFormClick = (e: React.MouseEvent) => {
+  //   setFormCoords({ top: e.clientY, left: e.clientX });
+  // };
 
   return (
     <table className={styles.table}>

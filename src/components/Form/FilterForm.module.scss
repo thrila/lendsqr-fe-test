@@ -36,7 +36,7 @@ $form-text-color: rgba(84, 95, 125, 1);
     color: $form-text-color;
 
     &::placeholder {
-      color: lighten($form-text-color, 20%); // lighter than text
+      color: lighten($form-text-color, 20); // lighter than text
       font-style: italic; // optional
     }
   }

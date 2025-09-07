@@ -9,13 +9,12 @@ import { useState } from "react";
 
 export default function UserDetailsPage() {
   const params = useParams<{ id: string }>();
-  const [userData, setUserData] = useState(data);
+  const [userData] = useState(data);
   const user = userData.find((u) => u.id == Number(params.id));
 
   const handleActivate = () => {
     // NOTE: usually you will send a req with user id or something
     console.log("send ");
-    const activate = userData;
   };
 
   const handleBlacklist = () => {

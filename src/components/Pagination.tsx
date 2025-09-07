@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import styles from "./Pagination.module.scss";
 import ChervonRight from "@/icons/chervon_right.svg";
 import ChervonLeft from "@/icons/chervon_left.svg";
@@ -12,7 +11,13 @@ type Props = {
   currentPage: number;
 };
 
-export default function PaginationBar({ totalItems, itemsPerPage, onPageChange, onItemsPerPageChange, currentPage }: Props) {
+export default function PaginationBar({
+  totalItems,
+  itemsPerPage,
+  onPageChange,
+  onItemsPerPageChange,
+  currentPage,
+}: Props) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   // Build list of pages to display with ellipsis

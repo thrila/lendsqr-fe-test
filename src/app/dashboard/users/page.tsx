@@ -26,7 +26,7 @@ const UserPage = () => {
         ))}
       </div>
       <div>
-        {/* @ts-ignore */}
+        {/* @ts-expect-error: Json type is different from expected type */}
         <UserTable users={currentUsers} loading={false} />
       </div>
       <div>
