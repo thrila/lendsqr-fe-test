@@ -18,7 +18,7 @@ export type User = {
   organization: string;
   username: string;
   email: string;
-  phone: number;
+  phone: string;
   dateJoined: string; // ISO string or formatted date
   status: "active" | "inactive" | "pending" | "blacklisted";
 };

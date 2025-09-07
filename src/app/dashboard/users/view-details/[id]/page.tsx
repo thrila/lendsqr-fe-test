@@ -149,7 +149,7 @@ export default function UserDetailsPage() {
           <div>
             <p>Monthly Income</p>
             <span>
-              {formatNaira(user?.monthlyIncome[0])}- {formatNaira(user?.monthlyIncome[1])}
+  {formatNaira(user?.monthlyIncome?.[0] ?? 0)} - {formatNaira(user?.monthlyIncome?.[1] ?? 0)}
             </span>
           </div>
           <div>
