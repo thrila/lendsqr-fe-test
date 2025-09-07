@@ -1,28 +1,18 @@
-"use client";
-import { useState } from "react";
 import styles from "./page.module.scss";
-import Header from "@/components/Header/Header";
-import Sidebar from "@/components/Sidebar/Sidebar";
+import Link from "next/link";
 
-export default function Home() {
-  const [page, SetPage] = useState("user");
+export default function DashboardPage() {
   return (
-    <div className={styles.container}>
-      {/* Sidebar */}
-      <aside className={styles.sidebar}>
-        <Sidebar />
-      </aside>
-
-      {/* Main content area */}
-      <div className={styles.main}>
-        {/* Header */}
-        <header className={styles.header}>
-          <Header />
-        </header>
-
-        {/* Page content */}
-        <main className={styles.content}>{page === "user" && <p>user</p>}</main>
-      </div>
+    <div className={styles.landing}>
+      <h1 className={styles.title}>Dashboard</h1>
+      <p className={styles.subtitle}>
+        Welcome to your the Root folder. Go to get{" "}
+        <Link href={"dashboard/users"}>
+          {" "}
+          <span className={styles.link}>started</span>
+        </Link>{" "}
+        .
+      </p>
     </div>
   );
 }

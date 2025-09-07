@@ -4,7 +4,7 @@ import ActivateIcon from "@/icons/activate.svg";
 import { BubbleList } from "@/type/types";
 
 export const menuList: BubbleList = [
-  { icon: <ViewIcon />, text: "View Details" },
-  { icon: <DeleteFriendIcon />, text: "Blacklist User" },
-  { icon: <ActivateIcon />, text: "Activate User" },
+  { icon: <ViewIcon />, text: "View Details", href: "view-details" },
+  { icon: <DeleteFriendIcon />, text: "Blacklist User", href: "blacklist-user" },
+  { icon: <ActivateIcon />, text: "Activate User", href: "activate-user" },
 ];

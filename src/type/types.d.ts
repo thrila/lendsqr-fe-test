@@ -11,9 +11,10 @@ export type UserCardProps = {
   title: string;
   text: string;
 };
-export type BubbleList = Array<Omit<UserCardProps, "title">>;
+export type BubbleList = Array<Omit<UserCardProps, "title"> & { href: string }>;
 
 export type User = {
+  id:string;
   organization: string;
   username: string;
   email: string;
@@ -27,6 +28,7 @@ export type UserTableProps = {
 };
 
 export type MenuProps = {
+  id: string;
   items: BubbleList;
   coords: { top: number; left: number };
   visible: boolean;

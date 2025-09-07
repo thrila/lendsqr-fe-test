@@ -21,7 +21,7 @@ const LoginPage = () => {
 
   const onSubmit = (data: LoginData) => {
     console.log("clicked");
-    toast.success(`Email: ${data.email} Password: ${data.password}`);
+    toast.success(`Email ${data.email} matches the required format`);
   };
 
   return (

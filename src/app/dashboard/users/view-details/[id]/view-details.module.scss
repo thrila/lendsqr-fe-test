@@ -1,0 +1,250 @@
+@use "../../../../../styles/variables" as *; // adjust relative path
+
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+    text-decoration: none;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+
+  }
+
+  p {
+    color: $secondary-color;
+  }
+}
+
+.row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+
+    .blacklist {
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(228, 3, 59, 1);
+      border-radius: 8px;
+      color: rgba(228, 3, 59, 1);
+      cursor: pointer;
+      background-color: $background-light;
+      transition: all 0.3s ease-in; // smooth hover effect
+
+      &:hover {
+        background-color: rgba(228, 3, 59, 0.1);
+        color: rgba(228, 3, 59, 1);
+      }
+    }
+
+    .activate {
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(57, 205, 204, 1);
+      border-radius: 8px;
+      color: rgba(57, 205, 204, 1);
+      cursor: pointer;
+      background-color: $background-light;
+      transition: all 0.3s ease-in; // smooth hover effect
+
+      &:hover {
+        background-color: rgba(57, 205, 204, 0.1);
+        color: rgba(57, 205, 204, 1);
+      }
+    }
+  }
+}
+
+
+.userCard {
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 8px;
+  padding: 1rem;
+  padding-top: 3rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.leftGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+
+  h1 {
+    font-size: 16px;
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    color: $primary-color;
+    font-weight: 400;
+  }
+}
+
+.middleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+
+  h1 {
+    font-size: 16px;
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgba(233, 178, 0, 1);
+    font-weight: 400;
+  }
+}
+
+.rightGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+
+  h1 {
+    font-size: 20px;
+    color: $primary-color;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 14px;
+    color: $primary-color;
+    font-weight: 400;
+  }
+
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url("/images/user.png"); // no 'public'
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nameId {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
+.divider {
+  width: 1px;
+  height: 50px;
+  background: #ddd;
+  margin: 0 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: -1rem;
+  color: $primary-color;
+}
+
+.tabs span {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: rgba(57, 205, 204, 1);
+  border-bottom: 2px solid rgba(57, 205, 204, 1);
+}
+
+.section {
+  background: $background-light;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+
+  h3 {
+    padding: 1rem 0;
+    color: $primary-color;
+  }
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.infoGrid p {
+  font-size: 12px;
+  color: rgba(84, 95, 125, 1);
+  font-weight: 200;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.infoGrid span {
+  font-weight: 500;
+  color: rgba(84, 95, 125, 1);
+  font-size: 16px;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.socials p {
+  font-size: 12px;
+  color: rgba(84, 95, 125, 1);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.socials a,
+.socials span {
+  font-weight: 500;
+  color: rgba(84, 95, 125, 1);
+  font-size: 14px;
+}

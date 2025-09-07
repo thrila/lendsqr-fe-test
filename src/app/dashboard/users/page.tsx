@@ -3,7 +3,7 @@ import UserCard from "@/components/UserCards/Card";
 import UserTable from "@/components/Table/Table";
 import styles from "./users.module.scss";
 import { userCardList } from "./UsersList";
-import { mockUsers } from "@/components/Table/TableList";
+import users from "@/data/users.json";
 import PaginationBar from "@/components/Pagination";
 
 const UserPage = () => {
@@ -18,10 +18,10 @@ const UserPage = () => {
         ))}
       </div>
       <div>
-        <UserTable users={mockUsers} loading={false} />
+        <UserTable users={users.slice(0, 99)} loading={false} />
       </div>
       <div>
-        <PaginationBar totalItems={2000} />
+        <PaginationBar totalItems={users.length} />
       </div>
     </div>
   );

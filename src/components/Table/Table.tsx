@@ -30,7 +30,7 @@ export default function UserTable({ users, loading = false }: Props) {
   const handleOpen = (e: React.MouseEvent, idx: number) => {
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     setCoords({
-      top: rect.bottom + window.scrollY + 6, // 6px gap
+      top: rect.bottom + window.scrollY + 1, // 6px gap
       left: rect.left + window.scrollX - 100, // adjust for bubble width
     });
     setOpenRow(idx);
@@ -54,7 +54,10 @@ export default function UserTable({ users, loading = false }: Props) {
           </th>
           <th>
             <div className={styles.thContent}>
-              Username <FilterResultsIcon />
+              Username{" "}
+              <span onClick={() => setOpen(true)}>
+                <FilterResultsIcon />
+              </span>
             </div>
           </th>
           <th>
@@ -78,9 +81,8 @@ export default function UserTable({ users, loading = false }: Props) {
             </div>
           </th>
           <th>
-            <span>nbsp;</span>
-          </th>{" "}
-          {/* blank header cell for options column */}
+            <span>&nbsp;</span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -116,7 +118,7 @@ export default function UserTable({ users, loading = false }: Props) {
                 <td>{user.organization}</td>
                 <td>{user.username}</td>
                 <td>{user.email}</td>
-                <td>{user.phone}</td>
+                <td>+{user.phone}</td>
                 <td>{user.dateJoined}</td>
                 <td>
                   <span
@@ -143,6 +145,7 @@ export default function UserTable({ users, loading = false }: Props) {
                     <ClientPortal>
                       <BubbleMenu
                         items={menuList}
+                        id={user.id}
                         coords={coords}
                         visible={menuVisible}
                         onSelect={handleSelect}

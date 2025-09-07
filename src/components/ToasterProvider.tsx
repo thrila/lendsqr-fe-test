@@ -8,9 +8,9 @@ export default function ToasterProvider() {
     <Toaster
       toastOptions={{
         style: {
-          background: "rgba(57, 205, 204, 1)",
-          color: "rgba(84, 95, 125, 1)", // text color
-          fontWeight: "bold",
+          background: "rgba(255, 255, 255, 0.5)",
+          color: "#213F7D", // text color
+          fontWeight: "400",
           zIndex: 1000,
         },
       }}
